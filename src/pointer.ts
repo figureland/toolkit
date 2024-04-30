@@ -5,10 +5,10 @@ import {
   isPointerEvent,
   type ListenerTarget,
   type PointerInteractionEvent
-} from './utils/dom-events'
+} from '@figureland/toolkit'
 import { vector2, type Vector2 } from '@figureland/mathkit/vector2'
 
-export type { ListenerTarget, PointerInteractionEvent } from './utils/dom-events'
+export type { ListenerTarget, PointerInteractionEvent } from '@figureland/toolkit'
 
 export type PointerType = 'mouse' | 'pen' | 'touch'
 

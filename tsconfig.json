@@ -19,7 +19,8 @@
     "types": ["bun-types", "./src/global.d.ts"],
     "baseUrl": ".",
     "paths": {
-      "@figureland/toolkit": ["./src/index.ts"]
+      "@figureland/toolkit": ["./src/index.ts"],
+      "@figureland/toolkit/*": ["./src/*.ts"]
     }
   },
   "exclude": ["node_modules", "src/**/*.test.ts", "dist"],

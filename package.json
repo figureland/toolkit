@@ -10,10 +10,40 @@
       "require": "./dist/index.js",
       "import": "./dist/index.js"
     },
-    "./entry": {
-      "types": "./dist/entry.d.ts",
-      "require": "./dist/entry.js",
-      "import": "./dist/entry.js"
+    "./clipboard": {
+      "types": "./dist/clipboard.d.ts",
+      "require": "./dist/clipboard.js",
+      "import": "./dist/clipboard.js"
+    },
+    "./device": {
+      "types": "./dist/device.d.ts",
+      "require": "./dist/device.js",
+      "import": "./dist/device.js"
+    },
+    "./filedrop": {
+      "types": "./dist/filedrop.d.ts",
+      "require": "./dist/filedrop.js",
+      "import": "./dist/filedrop.js"
+    },
+    "./fullscreen": {
+      "types": "./dist/fullscreen.d.ts",
+      "require": "./dist/fullscreen.js",
+      "import": "./dist/fullscreen.js"
+    },
+    "./keycommands": {
+      "types": "./dist/keycommands.d.ts",
+      "require": "./dist/keycommands.js",
+      "import": "./dist/keycommands.js"
+    },
+    "./pointer": {
+      "types": "./dist/pointer.d.ts",
+      "require": "./dist/pointer.js",
+      "import": "./dist/pointer.js"
+    },
+    "./screen": {
+      "types": "./dist/screen.d.ts",
+      "require": "./dist/screen.js",
+      "import": "./dist/screen.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",

@@ -1,7 +1,7 @@
 import { type SignalObject, signalObject } from '@figureland/statekit'
 import { dp } from '@figureland/mathkit'
 import type { Size } from '@figureland/mathkit/size'
-import { createListener } from './utils/dom-events'
+import { createListener } from '@figureland/toolkit'
 
 export type ScreenState = {
   visible: boolean

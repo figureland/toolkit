@@ -1,5 +1,5 @@
 import { type Signal, manager, signal, type Disposable } from '@figureland/statekit'
-import { createListener } from './utils/dom-events'
+import { createListener } from '@figureland/toolkit'
 
 export const supportsFullscreen = (): boolean =>
   ('fullscreenEnabled' in document && !!document.fullscreenEnabled) ||
