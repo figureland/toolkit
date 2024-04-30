@@ -16,7 +16,7 @@
       "import": "./dist/entry.js"
     }
   },
-  "description": "toolkit template for Figure Typescript projects",
+  "description": "A collection of utilities for building experimental, creative tools",
   "scripts": {
     "build": "bun run scripts/build.ts",
     "dev": "bun --watch scripts/dev.ts",
