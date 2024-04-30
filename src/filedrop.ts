@@ -1,4 +1,10 @@
-import { type Events, type SignalObject, createEvents, signalObject } from '@figureland/statekit'
+import {
+  type Events,
+  type SignalObject,
+  createEvents,
+  signalObject,
+  type Disposable
+} from '@figureland/statekit'
 import { isNotNullish } from '@figureland/typekit/guards'
 import { createListener, type ListenerTarget } from '@figureland/toolkit'
 
@@ -31,7 +37,7 @@ export const createFileDrop = ({
   maxSize = 1024 * 64
 }: FileDropOptions) => {
   const state = signalObject<FileDropState>(initialState)
-  const events = createEvents<FileDropEvents>()
+  const events = state.use(createEvents<FileDropEvents>())
 
   const reset = () => state.set(initialState)
 
@@ -100,12 +106,13 @@ export const createFileDrop = ({
   state.use(createListener(target, 'drop', onDrop))
 
   return {
+    dispose: state.dispose,
     state,
     events
   }
 }
 
-export type FileDrop = {
+export type FileDrop = Disposable & {
   state: SignalObject<FileDropState>
   events: Events<FileDropEvents>
 }
