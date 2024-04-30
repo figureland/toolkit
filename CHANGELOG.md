@@ -1,4 +1,16 @@
 #
+## v0.0.5
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- Update package.json description ([fdd78c6](https://github.com/figureland/toolkit/commit/fdd78c6))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.4
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.3...v0.0.4)
