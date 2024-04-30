@@ -1,4 +1,15 @@
 #
+## v0.0.3
+
+
+### 🚀 Enhancements
+
+- Initial commit with basic structure ([4ec5b94](https://github.com/figureland/toolkit/commit/4ec5b94))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.2
 
 
