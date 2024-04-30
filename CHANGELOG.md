@@ -1,4 +1,16 @@
 #
+## v0.0.6
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Add screen.ts ([04bd332](https://github.com/figureland/toolkit/commit/04bd332))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.5
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.4...v0.0.5)
