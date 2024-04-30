@@ -1,4 +1,16 @@
 #
+## v0.0.7
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Fixed typescript error exporting wrong type ([f4a1597](https://github.com/figureland/toolkit/commit/f4a1597))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.6
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.5...v0.0.6)
