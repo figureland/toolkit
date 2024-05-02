@@ -2,29 +2,40 @@ import { type SignalObject, signalObject } from '@figureland/statekit'
 import { dp } from '@figureland/mathkit'
 import type { Size } from '@figureland/mathkit/size'
 import { createListener } from '@figureland/toolkit'
+import { getClosestBreakpoint, type Breakpoints } from './utils/breakpoints'
 
-export type ScreenState = {
+export type ScreenState<B> = {
   visible: boolean
   size: Size
   scale: number
   orientation: OrientationType
+  breakpoint: keyof B
 }
 
 const getWindowSize = (): Size => ({ width: window.innerWidth, height: window.innerHeight })
 const getWindowScale = (): number => dp(window.outerWidth / window.innerWidth, 3)
 
-export const createScreen = (): Screen => {
-  const state = signalObject<ScreenState>({
+const defaultBreakpoint: Breakpoints = {
+  default: 0
+}
+
+export const createScreen = <B extends Breakpoints>(
+  breakpoints: B = defaultBreakpoint as B
+): Screen<B> => {
+  const size = getWindowSize()
+  const state = signalObject<ScreenState<B>>({
     visible: true,
-    size: getWindowSize(),
+    size,
     scale: getWindowScale(),
-    orientation: 'landscape-primary'
+    orientation: screen?.orientation?.type || 'landscape-primary',
+    breakpoint: getClosestBreakpoint(breakpoints, size.width)
   })
 
-  const resizeListener = () => {
+  const resize = () => {
     state.set({
       scale: getWindowScale(),
-      size: getWindowSize()
+      size: getWindowSize(),
+      breakpoint: getClosestBreakpoint(breakpoints, window.innerWidth)
     })
   }
 
@@ -35,18 +46,23 @@ export const createScreen = (): Screen => {
   }
 
   const onOrientationChange = () => {
-    if (screen.orientation) {
-      state.set({
-        orientation: screen.orientation.type
-      })
-    }
+    state.set({
+      orientation: screen.orientation.type
+    })
   }
 
   state.use(createListener(screen.orientation, 'change', onOrientationChange))
   state.use(createListener(document, 'visibilitychange', onVisibilityChange))
-  state.use(createListener(document, 'resize', resizeListener))
+  state.use(createListener(document, 'resize', resize))
 
-  return state
+  const isBreakpoint = (b: keyof B) => state.key('breakpoint').get() === b
+
+  return {
+    ...state,
+    isBreakpoint
+  }
 }
 
-export type Screen = SignalObject<ScreenState>
+export type Screen<B = Breakpoints> = SignalObject<ScreenState<B>> & {
+  isBreakpoint: (b: keyof B) => boolean
+}

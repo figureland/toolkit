@@ -1,6 +1,7 @@
 import { isString } from '@figureland/typekit'
 import { values } from '@figureland/typekit/object'
 import { promiseSome } from '@figureland/typekit/promise'
+import { fit, size } from '@figureland/mathkit/size'
 
 const { stringify, parse } = JSON
 
@@ -26,19 +27,24 @@ export const imageToBlob = async (src: ImageBlobContent): Promise<Blob> =>
     }
 
     img.onload = async () => {
-      const canvas = document.createElement('canvas')
-      canvas.width = img.width
-      canvas.height = img.height
-      const ctx = canvas.getContext('2d')
-      if (ctx) {
-        ctx.drawImage(img, 0, 0)
-        canvas.toBlob(async (blob) => {
-          if (!blob) {
-            reject(new Error('Failed to generate image blob'))
-          } else {
-            resolve(blob)
-          }
-        }, mimeTypes.image)
+      try {
+        const canvas = document.createElement('canvas')
+        const resized = fit(canvas, size(4096, 4096))
+        canvas.width = resized.width
+        canvas.height = resized.height
+        const ctx = canvas.getContext('2d')
+        if (ctx) {
+          ctx.drawImage(img, 0, 0)
+          canvas.toBlob(async (blob) => {
+            if (!blob) {
+              throw new Error('Failed to generate image blob')
+            } else {
+              resolve(blob)
+            }
+          }, mimeTypes.image)
+        }
+      } catch (e) {
+        reject(e)
       }
     }
 
