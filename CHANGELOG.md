@@ -1,4 +1,16 @@
 #
+## v0.0.11
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.10...v0.0.11)
+
+### 🚀 Enhancements
+
+- Tweaks to screen and image import ([7d310a9](https://github.com/figureland/toolkit/commit/7d310a9))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.10
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.9...v0.0.10)
