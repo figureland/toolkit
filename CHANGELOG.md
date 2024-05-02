@@ -1,4 +1,16 @@
 #
+## v0.0.12
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.11...v0.0.12)
+
+### 🏡 Chore
+
+- Tweak to screen api ([f3c0185](https://github.com/figureland/toolkit/commit/f3c0185))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.11
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.10...v0.0.11)
