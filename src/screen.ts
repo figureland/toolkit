@@ -55,14 +55,14 @@ export const createScreen = <B extends Breakpoints>(
   state.use(createListener(document, 'visibilitychange', onVisibilityChange))
   state.use(createListener(document, 'resize', resize))
 
-  const isBreakpoint = (b: keyof B) => state.key('breakpoint').get() === b
+  const is = (b: keyof B) => state.key('breakpoint').get() === b
 
   return {
     ...state,
-    isBreakpoint
+    is
   }
 }
 
 export type Screen<B = Breakpoints> = SignalObject<ScreenState<B>> & {
-  isBreakpoint: (b: keyof B) => boolean
+  is: (b: keyof B) => boolean
 }
