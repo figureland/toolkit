@@ -1,4 +1,16 @@
 #
+## v0.0.15
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.14...v0.0.15)
+
+### 🏡 Chore
+
+- Fixed broken import from statekit api change ([8b152f2](https://github.com/figureland/toolkit/commit/8b152f2))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.14
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.13...v0.0.14)
