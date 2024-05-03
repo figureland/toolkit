@@ -2,7 +2,7 @@ import {
   type Signal,
   type Disposable,
   type Events,
-  manager,
+  system,
   signal,
   createEvents
 } from '@figureland/statekit'
@@ -40,7 +40,7 @@ export type ParsedClipboardData = {
 }
 
 export const createClipboard = (): Clipboard => {
-  const { use, dispose } = manager()
+  const { use, dispose } = system()
   const available = use(signal(supportsClipboard))
 
   const events = createEvents<ClipboardEvents>()

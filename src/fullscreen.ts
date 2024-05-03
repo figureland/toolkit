@@ -1,4 +1,4 @@
-import { type Signal, manager, signal, type Disposable } from '@figureland/statekit'
+import { type Signal, system, signal, type Disposable } from '@figureland/statekit'
 import { createListener } from '@figureland/toolkit'
 
 export const supportsFullscreen = (): boolean =>
@@ -6,7 +6,7 @@ export const supportsFullscreen = (): boolean =>
   'webkitFullscreenEnabled' in document
 
 export const createFullscreen = (): Fullscreen => {
-  const { use, dispose } = manager()
+  const { use, dispose } = system()
   const available = use(signal(supportsFullscreen))
   const active = use(signal(() => false))
 
