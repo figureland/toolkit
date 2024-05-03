@@ -1,4 +1,16 @@
 #
+## v0.0.13
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.12...v0.0.13)
+
+### 🚀 Enhancements
+
+- Tweaks to blob import ([b4c7248](https://github.com/figureland/toolkit/commit/b4c7248))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.12
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.11...v0.0.12)
