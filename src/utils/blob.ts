@@ -51,12 +51,13 @@ export const imageToBlob = async (src: ImageBlobContent): Promise<Blob> =>
     img.onerror = (e) => reject(e)
   })
 
-export const blobToImage = async (blob: Blob): Promise<HTMLImageElement> =>
+export const blobToImage = async (blob: Blob): Promise<string> =>
   new Promise((resolve, reject) => {
-    const img = new Image()
-    img.onload = () => resolve(img)
-    img.onerror = (e) => reject(e)
-    img.src = URL.createObjectURL(blob)
+    try {
+      resolve(URL.createObjectURL(blob))
+    } catch {
+      reject(new Error(`Could not create object URL from blob`))
+    }
   })
 
 export type DataBlobContent = unknown
@@ -66,7 +67,16 @@ export const dataToBlob = async (content: DataBlobContent) =>
 
 export const blobToData = async (blob: Blob): Promise<unknown> => {
   const text = await blob.text()
-  return parse(text)
+  try {
+    const result = parse(text)
+    return result
+  } catch (e) {
+    if (e instanceof SyntaxError) {
+      return text
+    } else {
+      throw e
+    }
+  }
 }
 
 export type HTMLBlobContent = string | HTMLElement
