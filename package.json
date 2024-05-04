@@ -82,7 +82,7 @@
   "peerDependencies": {
     "@figureland/mathkit": ">=0.0.28",
     "@figureland/statekit": ">=0.0.72",
-    "@figureland/typekit": ">=0.0.22"
+    "@figureland/typekit": ">=0.0.23"
   },
   "peerDependenciesMeta": {
     "@figureland/mathkit": {
@@ -98,6 +98,6 @@
   "dependencies": {
     "@figureland/mathkit": "^0.0.28",
     "@figureland/statekit": "^0.0.72",
-    "@figureland/typekit": "^0.0.22"
+    "@figureland/typekit": "^0.0.23"
   }
 }
