@@ -1,4 +1,4 @@
-import { system, signal, createEvents, type Disposable } from '@figureland/statekit'
+import { system, signal, createEvents, type Disposable, type Events } from '@figureland/statekit'
 import { NiceMap } from '@figureland/typekit/map'
 import { keys } from '@figureland/typekit/object'
 
@@ -60,6 +60,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
   use(audioContext.close)
 
   return {
+    events,
     play,
     stop,
     dispose
@@ -67,6 +68,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
 }
 
 export type SFX<S extends SoundMap, K extends keyof S> = Disposable & {
+  events: Events<{ play: { sound: K } }>
   play: (sound: K) => Promise<void>
   stop: () => void
 }
