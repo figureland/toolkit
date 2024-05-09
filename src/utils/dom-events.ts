@@ -27,13 +27,11 @@ export const createListener = <T extends keyof UnifiedEventMap>(
 
 export const isPointerEvent = (event: Event): event is PointerEvent => event instanceof PointerEvent
 
-export const UI_CLASS = 'ui'
-
 export const allowEvent = (e: Event) => {
   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
     return true
   }
-  if (e.target instanceof HTMLElement && e.target.classList?.contains(UI_CLASS)) {
+  if (e.target instanceof HTMLElement) {
     return true
   }
   return false

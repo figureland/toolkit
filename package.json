@@ -1,54 +1,54 @@
 {
   "name": "@figureland/toolkit",
   "version": "0.0.21",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.js"
+      "require": "./dist/src/index.js",
+      "import": "./dist/src/index.js"
     },
     "./clipboard": {
       "types": "./dist/clipboard.d.ts",
-      "require": "./dist/clipboard.js",
-      "import": "./dist/clipboard.js"
+      "require": "./dist/src/clipboard.js",
+      "import": "./dist/src/clipboard.js"
     },
     "./device": {
       "types": "./dist/device.d.ts",
-      "require": "./dist/device.js",
-      "import": "./dist/device.js"
+      "require": "./dist/src/device.js",
+      "import": "./dist/src/device.js"
     },
     "./filedrop": {
       "types": "./dist/filedrop.d.ts",
-      "require": "./dist/filedrop.js",
-      "import": "./dist/filedrop.js"
+      "require": "./dist/src/filedrop.js",
+      "import": "./dist/src/filedrop.js"
     },
     "./fullscreen": {
       "types": "./dist/fullscreen.d.ts",
-      "require": "./dist/fullscreen.js",
-      "import": "./dist/fullscreen.js"
+      "require": "./dist/src/fullscreen.js",
+      "import": "./dist/src/fullscreen.js"
     },
     "./keycommands": {
       "types": "./dist/keycommands.d.ts",
-      "require": "./dist/keycommands.js",
-      "import": "./dist/keycommands.js"
+      "require": "./dist/src/keycommands.js",
+      "import": "./dist/src/keycommands.js"
     },
     "./pointer": {
       "types": "./dist/pointer.d.ts",
-      "require": "./dist/pointer.js",
-      "import": "./dist/pointer.js"
+      "require": "./dist/src/pointer.js",
+      "import": "./dist/src/pointer.js"
     },
     "./screen": {
       "types": "./dist/screen.d.ts",
-      "require": "./dist/screen.js",
-      "import": "./dist/screen.js"
+      "require": "./dist/src/screen.js",
+      "import": "./dist/src/screen.js"
     },
     "./sfx": {
       "types": "./dist/sfx.d.ts",
-      "require": "./dist/sfx.js",
-      "import": "./dist/sfx.js"
+      "require": "./dist/src/sfx.js",
+      "import": "./dist/src/sfx.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",
