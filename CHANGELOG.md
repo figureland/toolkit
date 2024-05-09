@@ -1,4 +1,16 @@
 #
+## v0.0.19
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.18...v0.0.19)
+
+### 🚀 Enhancements
+
+- Added sfx module ([f35f72f](https://github.com/figureland/toolkit/commit/f35f72f))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.18
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.17...v0.0.18)
