@@ -9,7 +9,8 @@ await Bun.build({
     './src/fullscreen.ts',
     './src/keycommands.ts',
     './src/pointer.ts',
-    './src/screen.ts'
+    './src/screen.ts',
+    './src/sfx.ts'
   ],
   outdir: './dist',
   minify: false,

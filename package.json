@@ -44,6 +44,11 @@
       "types": "./dist/screen.d.ts",
       "require": "./dist/screen.js",
       "import": "./dist/screen.js"
+    },
+    "./sfx": {
+      "types": "./dist/sfx.d.ts",
+      "require": "./dist/sfx.js",
+      "import": "./dist/sfx.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",
