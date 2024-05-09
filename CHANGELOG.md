@@ -1,4 +1,16 @@
 #
+## v0.0.21
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.20...v0.0.21)
+
+### 🚀 Enhancements
+
+- Added events to sfx ([faafae6](https://github.com/figureland/toolkit/commit/faafae6))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.20
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.19...v0.0.20)
