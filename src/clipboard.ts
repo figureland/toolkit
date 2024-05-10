@@ -6,14 +6,68 @@ import {
   signal,
   createEvents
 } from '@figureland/statekit'
-import {
-  type ClipboardEntry,
-  type ParsedClipboardItem,
-  createListener,
-  parseClipboardItem,
-  createClipboardItems
-} from '@figureland/toolkit'
+import { createListener } from '@figureland/toolkit/dom'
+import { isString } from '@figureland/typekit/guards'
+import { values } from '@figureland/typekit/object'
 import { promiseSome } from '@figureland/typekit/promise'
+import {
+  blobToData,
+  blobToHTML,
+  blobToImage,
+  dataToBlob,
+  htmlToBlob,
+  imageToBlob,
+  mimeTypes,
+  type DataBlobContent,
+  type HTMLBlobContent,
+  type ImageBlobContent
+} from '@figureland/toolkit/blob'
+
+export type ClipboardEntry = {
+  data?: DataBlobContent
+  html?: HTMLBlobContent
+  image?: ImageBlobContent
+}
+
+const has = <C extends ClipboardEntry, T extends string & keyof C, R extends Required<C>>(
+  e: C,
+  type: T
+): e is R => isString(type) && `${type}` in e && !!e[type]
+
+export const createClipboardItems = async (entries: ClipboardEntry[]): Promise<ClipboardItem[]> =>
+  promiseSome(
+    entries.map(
+      async (e) =>
+        new ClipboardItem({
+          ...(has(e, 'html') && { [mimeTypes.html]: await htmlToBlob(e.html) }),
+          ...(has(e, 'data') && { [mimeTypes.data]: await dataToBlob(e.html) }),
+          ...(has(e, 'image') && { [mimeTypes.image]: await imageToBlob(e.image) })
+        })
+    )
+  ).then(({ fulfilled }) => fulfilled)
+
+const parsers = {
+  [mimeTypes.html]: blobToHTML,
+  [mimeTypes.data]: blobToData,
+  [mimeTypes.image]: blobToImage
+}
+
+export const parseClipboardItem = (item: ClipboardItem) =>
+  promiseSome(
+    values(mimeTypes)
+      .filter((t) => item.types.includes(t))
+      .map(async (type) => {
+        const blob = await item.getType(type)
+        const data = await parsers[type](blob)
+        return {
+          type,
+          data,
+          size: blob.size
+        }
+      })
+  ).then(({ fulfilled }) => fulfilled)
+
+export type ParsedClipboardItem = Awaited<ReturnType<typeof parseClipboardItem>>
 
 export const supportsClipboard = (): boolean => 'navigator' && 'clipboard' in navigator
 

@@ -1,4 +1,4 @@
-import { keys } from '@figureland/typekit'
+import { keys } from '@figureland/typekit/object'
 
 export type Breakpoints = {
   [key: string]: number

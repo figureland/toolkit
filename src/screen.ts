@@ -1,7 +1,7 @@
 import { type SignalObject, signalObject } from '@figureland/statekit'
 import { dp } from '@figureland/mathkit'
 import type { Size } from '@figureland/mathkit/size'
-import { createListener } from '@figureland/toolkit'
+import { createListener } from '@figureland/toolkit/dom'
 import { getClosestBreakpoint, type Breakpoints } from './utils/breakpoints'
 
 export type ScreenState<B> = {

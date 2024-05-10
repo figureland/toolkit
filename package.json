@@ -49,6 +49,11 @@
       "types": "./dist/sfx.d.ts",
       "require": "./dist/src/sfx.js",
       "import": "./dist/src/sfx.js"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "require": "./dist/src/dom.js",
+      "import": "./dist/src/dom.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",

@@ -2,7 +2,7 @@ import dts from 'bun-plugin-dts'
 
 await Bun.build({
   entrypoints: [
-    './src/index.ts',
+    // './src/index.ts',
     './src/device.ts',
     './src/clipboard.ts',
     './src/filedrop.ts',
@@ -10,7 +10,8 @@ await Bun.build({
     './src/keycommands.ts',
     './src/pointer.ts',
     './src/screen.ts',
-    './src/sfx.ts'
+    './src/sfx.ts',
+    './src/dom.ts'
   ],
   outdir: './dist',
   minify: false,

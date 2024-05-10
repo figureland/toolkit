@@ -1,5 +1,5 @@
 import { createEvents } from '@figureland/statekit'
-import { preventEvents, type ListenerTarget } from '@figureland/toolkit'
+import { preventEvents, type ListenerTarget } from '@figureland/toolkit/dom'
 import { tinykeys } from './utils/tinykeys'
 
 export enum Commands {

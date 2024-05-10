@@ -6,7 +6,7 @@ import {
   type Disposable
 } from '@figureland/statekit'
 import { isNotNullish } from '@figureland/typekit/guards'
-import { createListener, type ListenerTarget } from '@figureland/toolkit'
+import { createListener, type ListenerTarget } from '@figureland/toolkit/dom'
 
 export type FileDropEvents = {
   drop: File[]
