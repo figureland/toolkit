@@ -1,4 +1,16 @@
 #
+## v0.0.29
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.28...v0.0.29)
+
+### 🩹 Fixes
+
+- Added missing entrypoint and export for blob ([15bb26b](https://github.com/figureland/toolkit/commit/15bb26b))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.28
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.27...v0.0.28)
