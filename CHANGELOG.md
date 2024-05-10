@@ -1,4 +1,20 @@
 #
+## v0.0.28
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.27...v0.0.28)
+
+### 🚀 Enhancements
+
+- Added dom and blob entrypoints ([01fb7a6](https://github.com/figureland/toolkit/commit/01fb7a6))
+
+### 🏡 Chore
+
+- Added index.ts entrypoint ([b410814](https://github.com/figureland/toolkit/commit/b410814))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.27
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.26...v0.0.27)
