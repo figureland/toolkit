@@ -2,7 +2,7 @@ import dts from 'bun-plugin-dts'
 
 await Bun.build({
   entrypoints: [
-    // './src/index.ts',
+    './src/index.ts',
     './src/device.ts',
     './src/clipboard.ts',
     './src/filedrop.ts',
