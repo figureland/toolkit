@@ -54,6 +54,11 @@
       "types": "./dist/dom.d.ts",
       "require": "./dist/src/dom.js",
       "import": "./dist/src/dom.js"
+    },
+    "./blob": {
+      "types": "./dist/blob.d.ts",
+      "require": "./dist/src/blob.js",
+      "import": "./dist/src/blob.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",

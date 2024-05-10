@@ -11,7 +11,8 @@ await Bun.build({
     './src/pointer.ts',
     './src/screen.ts',
     './src/sfx.ts',
-    './src/dom.ts'
+    './src/dom.ts',
+    './src/blob.ts'
   ],
   outdir: './dist',
   minify: false,
