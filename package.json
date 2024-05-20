@@ -59,6 +59,11 @@
       "types": "./dist/blob.d.ts",
       "require": "./dist/src/blob.js",
       "import": "./dist/src/blob.js"
+    },
+    "./preferences": {
+      "types": "./dist/preferences.d.ts",
+      "require": "./dist/src/preferences.js",
+      "import": "./dist/src/preferences.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",
