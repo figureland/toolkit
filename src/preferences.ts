@@ -1,7 +1,5 @@
 import { readonly, signalObject, type ReadonlySignal } from '@figureland/statekit'
-import { createListener } from './dom'
-
-const mediaQuery = (q: string) => window.matchMedia(`(${q})`)
+import { createListener, mediaQuery } from '@figureland/toolkit/dom'
 
 type PreferenceState = {
   theme: 'light' | 'dark'

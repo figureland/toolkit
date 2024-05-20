@@ -118,6 +118,6 @@
   "dependencies": {
     "@figureland/mathkit": "^0.0.30",
     "@figureland/statekit": "^0.0.82",
-    "@figureland/typekit": "^0.0.23"
+    "@figureland/typekit": "0.0.24"
   }
 }

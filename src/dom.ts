@@ -52,3 +52,5 @@ export const preventEvents = (e: PointerInteractionEvent) => {
     e.stopPropagation()
   }
 }
+
+export const mediaQuery = (q: string) => window.matchMedia(`(${q})`)
