@@ -1,4 +1,17 @@
 #
+## v0.0.33
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.32...v0.0.33)
+
+### 🚀 Enhancements
+
+- Added preferences ([b7c11a1](https://github.com/figureland/toolkit/commit/b7c11a1))
+- Added build step and entrypoints ([431b9df](https://github.com/figureland/toolkit/commit/431b9df))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.32
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.31...v0.0.32)
