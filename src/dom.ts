@@ -1,7 +1,7 @@
 import { disposable, type Disposable } from '@figureland/statekit'
 
 export const isBrowser = typeof window !== 'undefined'
-export type ListenerTarget = Document | Window | HTMLElement | ScreenOrientation
+export type ListenerTarget = Document | Window | HTMLElement | ScreenOrientation | MediaQueryList
 
 export type PointerInteractionEvent = Event | WheelEvent | PointerEvent | MouseEvent | TouchEvent
 
@@ -13,6 +13,8 @@ export type UnifiedEventMap = WindowEventMap &
     gesturestart: Event
     gesturechange: Event
     gestureend: Event
+  } & {
+    change: MediaQueryListEvent
   }
 
 export const createListener = <T extends keyof UnifiedEventMap>(
@@ -21,8 +23,15 @@ export const createListener = <T extends keyof UnifiedEventMap>(
   fn: (e: UnifiedEventMap[T]) => void,
   opts?: AddEventListenerOptions
 ): Disposable => {
-  target.addEventListener(eventName, fn as EventListener, opts)
-  return disposable(() => target.removeEventListener(eventName, fn as EventListener))
+  if (target instanceof MediaQueryList && eventName === 'change') {
+    target.addEventListener(eventName, fn as (e: MediaQueryListEvent) => void, opts)
+    return disposable(() =>
+      target.removeEventListener(eventName, fn as (e: MediaQueryListEvent) => void)
+    )
+  } else {
+    target.addEventListener(eventName, fn as EventListener, opts)
+    return disposable(() => target.removeEventListener(eventName, fn as EventListener))
+  }
 }
 
 export const isPointerEvent = (event: Event): event is PointerEvent => event instanceof PointerEvent
