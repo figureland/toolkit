@@ -1,4 +1,17 @@
 #
+## v0.0.36
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.35...v0.0.36)
+
+### 🏡 Chore
+
+- Bump dependencies and adding provenance ([baa59c6](https://github.com/figureland/toolkit/commit/baa59c6))
+- Updating lockfile ([1a934a5](https://github.com/figureland/toolkit/commit/1a934a5))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.35
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.34...v0.0.35)
