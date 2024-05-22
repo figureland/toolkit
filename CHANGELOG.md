@@ -1,4 +1,16 @@
 #
+## v0.0.38
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.37...v0.0.38)
+
+### 🏡 Chore
+
+- Bump dependency ([ef92fe3](https://github.com/figureland/toolkit/commit/ef92fe3))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.37
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.36...v0.0.37)
