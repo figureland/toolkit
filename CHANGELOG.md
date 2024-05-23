@@ -1,4 +1,16 @@
 #
+## v0.0.43
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.42...v0.0.43)
+
+### 🏡 Chore
+
+- Added provenance ([0d3c154](https://github.com/figureland/toolkit/commit/0d3c154))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.42
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.41...v0.0.42)
