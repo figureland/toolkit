@@ -101,8 +101,8 @@
   "homepage": "https://github.com/figureland/toolkit#readme",
   "peerDependencies": {
     "@figureland/mathkit": ">=0.0.35",
-    "@figureland/statekit": ">=0.0.92",
-    "@figureland/typekit": ">=0.0.24"
+    "@figureland/statekit": ">=0.0.93",
+    "@figureland/typekit": ">=0.0.25"
   },
   "peerDependenciesMeta": {
     "@figureland/mathkit": {
@@ -117,7 +117,7 @@
   },
   "dependencies": {
     "@figureland/mathkit": "^0.0.35",
-    "@figureland/statekit": "^0.0.92",
-    "@figureland/typekit": "0.0.24"
+    "@figureland/statekit": "^0.0.93",
+    "@figureland/typekit": "0.0.25"
   }
 }
