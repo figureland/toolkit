@@ -1,4 +1,16 @@
 #
+## v0.0.47
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.46...v0.0.47)
+
+### 🏡 Chore
+
+- Fix for new typekit api ([fd72384](https://github.com/figureland/toolkit/commit/fd72384))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.46
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.45...v0.0.46)
