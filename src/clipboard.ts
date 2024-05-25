@@ -9,7 +9,7 @@ import {
 import { createListener } from '@figureland/toolkit/dom'
 import { isString } from '@figureland/typekit/guards'
 import { values } from '@figureland/typekit/object'
-import { promiseSome } from '@figureland/typekit/promise'
+import { settle } from '@figureland/typekit/promise'
 import {
   blobToData,
   blobToHTML,
@@ -35,7 +35,7 @@ const has = <C extends ClipboardEntry, T extends string & keyof C, R extends Req
 ): e is R => isString(type) && `${type}` in e && !!e[type]
 
 export const createClipboardItems = async (entries: ClipboardEntry[]): Promise<ClipboardItem[]> =>
-  promiseSome(
+  settle(
     entries.map(
       async (e) =>
         new ClipboardItem({
@@ -53,7 +53,7 @@ const parsers = {
 }
 
 export const parseClipboardItem = (item: ClipboardItem) =>
-  promiseSome(
+  settle(
     values(mimeTypes)
       .filter((t) => item.types.includes(t))
       .map(async (type) => {
@@ -81,7 +81,7 @@ export type ClipboardEvents = {
 
 const getClipboardData = async () => {
   const items = await navigator.clipboard.read()
-  const result = await promiseSome(items.map(parseClipboardItem))
+  const result = await settle(items.map(parseClipboardItem))
   return {
     items: result.fulfilled,
     text: await navigator.clipboard.readText()
