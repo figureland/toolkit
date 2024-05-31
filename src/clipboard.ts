@@ -9,7 +9,7 @@ import {
 import { createListener } from '@figureland/toolkit/dom'
 import { isString } from '@figureland/typekit/guards'
 import { values } from '@figureland/typekit/object'
-import { settle } from '@figureland/typekit/promise'
+import { settle } from '@figureland/typekit/async'
 import {
   blobToData,
   blobToHTML,
