@@ -1,4 +1,4 @@
-import { signal, type Signal } from '@figureland/statekit'
+import { type SignalObject, signalObject } from '@figureland/statekit'
 import {
   allowEvent,
   createListener,
@@ -55,7 +55,7 @@ export const createPointer = ({
   filterEvents,
   preventGestureDefault = true
 }: PointerOptions = {}): Pointer => {
-  const state = signal(defaultPointerState)
+  const state = signalObject(defaultPointerState())
   const prevent = (e: PointerInteractionEvent) => filterEvents?.(e, allowEvent(e))
 
   const onPointerDown = (e: PointerInteractionEvent) => {
@@ -135,4 +135,4 @@ export const createPointer = ({
   return state
 }
 
-export type Pointer = Signal<PointerState>
+export type Pointer = SignalObject<PointerState>
