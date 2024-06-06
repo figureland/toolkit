@@ -1,4 +1,16 @@
 #
+## v0.0.66
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.65...v0.0.66)
+
+### 🩹 Fixes
+
+- Changed pointer back to SignalObject ([01fe423](https://github.com/figureland/toolkit/commit/01fe423))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.65
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.64...v0.0.65)
