@@ -5,7 +5,7 @@
 
 ### 🩹 Fixes
 
-- Changed pointer back to SignalObject ([01fe423](https://github.com/figureland/toolkit/commit/01fe423))
+- Changed pointer back to SignalRecord ([01fe423](https://github.com/figureland/toolkit/commit/01fe423))
 
 ### ❤️ Contributors
 

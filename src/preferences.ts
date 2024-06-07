@@ -1,4 +1,4 @@
-import { readonly, signalObject, type ReadonlySignal } from '@figureland/statekit'
+import { readonly, record, type ReadonlySignal } from '@figureland/statekit'
 import { createListener, mediaQuery } from '@figureland/toolkit/dom'
 
 type PreferenceState = {
@@ -12,7 +12,7 @@ export const createPreferences = () => {
   const reducedMotion = mediaQuery('prefers-reduced-motion: reduce')
   const reducedContrast = mediaQuery('prefers-contrast: no-preference')
 
-  const state = signalObject<PreferenceState>({
+  const state = record<PreferenceState>({
     theme: theme.matches ? 'dark' : 'light',
     reducedMotion: false,
     reducedContrast: false

@@ -1,4 +1,4 @@
-import { type SignalObject, signalObject } from '@figureland/statekit'
+import { type SignalRecord, record } from '@figureland/statekit'
 import { isChrome, isMobile, isSafari } from '@figureland/typekit/device'
 import { createListener } from '@figureland/toolkit/dom'
 
@@ -52,7 +52,7 @@ type DeviceState = {
 }
 
 export const createDevice = (): Device => {
-  const state = signalObject<DeviceState>({
+  const state = record<DeviceState>({
     online: navigator?.onLine || true,
     persistence: defaultPersistence(),
     safari: isSafari(),
@@ -75,4 +75,4 @@ export const createDevice = (): Device => {
   return state
 }
 
-export type Device = SignalObject<DeviceState>
+export type Device = SignalRecord<DeviceState>

@@ -1,4 +1,4 @@
-import { type SignalObject, signalObject } from '@figureland/statekit'
+import { type SignalRecord, record } from '@figureland/statekit'
 import { dp } from '@figureland/mathkit'
 import type { Size } from '@figureland/mathkit/size'
 import { createListener } from '@figureland/toolkit/dom'
@@ -23,7 +23,7 @@ export const createScreen = <B extends Breakpoints>(
   breakpoints: B = defaultBreakpoint as B
 ): Screen<B> => {
   const size = getWindowSize()
-  const state = signalObject<ScreenState<B>>({
+  const state = record<ScreenState<B>>({
     visible: true,
     size,
     scale: getWindowScale(),
@@ -63,6 +63,6 @@ export const createScreen = <B extends Breakpoints>(
   }
 }
 
-export type Screen<B = Breakpoints> = SignalObject<ScreenState<B>> & {
+export type Screen<B = Breakpoints> = SignalRecord<ScreenState<B>> & {
   is: (b: keyof B) => boolean
 }
