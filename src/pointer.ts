@@ -91,9 +91,9 @@ export const createPointer = ({
 
     const current = state.get()
 
-    const delta = current.active
-      ? vector2(point.x - current.point.x, point.y - current.point.y)
-      : vector2()
+    const delta = preciseEnough(
+      current.active ? vector2(point.x - current.point.x, point.y - current.point.y) : vector2()
+    )
 
     const hasDelta = delta.x !== 0 || delta.y !== 0
 
