@@ -6,7 +6,7 @@ import {
   type ListenerTarget,
   type PointerInteractionEvent
 } from '@figureland/toolkit/dom'
-import { vector2, type Vector2 } from '@figureland/mathkit/vector2'
+import { preciseEnough, vector2, type Vector2 } from '@figureland/mathkit/vector2'
 
 export type { ListenerTarget, PointerInteractionEvent } from '@figureland/toolkit/dom'
 
@@ -63,8 +63,10 @@ export const createPointer = ({
       return
     }
 
-    const { button, pointerType, shiftKey, metaKey } = e
+    const { button, pointerType, shiftKey, metaKey, clientX, clientY } = e
     prevent(e)
+
+    const point = preciseEnough(vector2(clientX, clientY))
 
     state.set({
       button,
@@ -72,7 +74,8 @@ export const createPointer = ({
       shiftKey,
       pointerType: pointerType as PointerType,
       delta: vector2(),
-      origin: state.get().point,
+      point,
+      origin: point,
       active: true
     })
   }
@@ -84,7 +87,7 @@ export const createPointer = ({
     const { clientX, clientY, shiftKey, metaKey, ctrlKey, button } = e
     prevent(e)
 
-    const point = vector2(clientX, clientY)
+    const point = preciseEnough(vector2(clientX, clientY))
 
     const current = state.get()
 
