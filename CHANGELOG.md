@@ -1,4 +1,16 @@
 #
+## v0.0.69
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.68...v0.0.69)
+
+### 🩹 Fixes
+
+- Removed extraneous argument from dp() ([f0972e2](https://github.com/figureland/toolkit/commit/f0972e2))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.68
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.67...v0.0.68)
