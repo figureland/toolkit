@@ -113,6 +113,7 @@ export const createPointer = ({
     state.set({
       button: null,
       delta: vector2(),
+      origin: vector2(),
       pointerType: null,
       pinching: false,
       active: false,
