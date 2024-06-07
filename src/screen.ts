@@ -13,7 +13,7 @@ export type ScreenState<B> = {
 }
 
 const getWindowSize = (): Size => ({ width: window.innerWidth, height: window.innerHeight })
-const getWindowScale = (): number => dp(window.outerWidth / window.innerWidth, 3)
+const getWindowScale = (): number => dp(window.outerWidth / window.innerWidth)
 
 const defaultBreakpoint: Breakpoints = {
   default: 0
