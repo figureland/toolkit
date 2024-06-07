@@ -1,4 +1,16 @@
 #
+## v0.0.70
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.69...v0.0.70)
+
+### 🚀 Enhancements
+
+- Added precision to delta ([5ba8d22](https://github.com/figureland/toolkit/commit/5ba8d22))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.69
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.68...v0.0.69)
