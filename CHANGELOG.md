@@ -1,4 +1,21 @@
 #
+## v0.0.68
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.67...v0.0.68)
+
+### 🚀 Enhancements
+
+- Added precision for pointer ([45e4395](https://github.com/figureland/toolkit/commit/45e4395))
+- Added reset for origin in pointer ([3d08000](https://github.com/figureland/toolkit/commit/3d08000))
+
+### 🏡 Chore
+
+- Bump depdendency ([b669634](https://github.com/figureland/toolkit/commit/b669634))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.67
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.66...v0.0.67)
