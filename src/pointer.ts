@@ -112,20 +112,36 @@ export const createPointer = ({
   }
 
   const onPointerUp = (e: PointerInteractionEvent) => {
+    if (!isPointerEvent(e)) {
+      return
+    }
+
     prevent(e)
+    const { clientX, clientY, shiftKey, metaKey, ctrlKey, button } = e
+
+    const point = preciseEnough(vector2(clientX, clientY))
+
+    const current = state.get()
+
+    const delta = preciseEnough(
+      current.active ? vector2(point.x - current.point.x, point.y - current.point.y) : vector2()
+    )
+
+    const hasDelta = delta.x !== 0 || delta.y !== 0
 
     state.set({
-      button: null,
-      delta: vector2(),
+      button,
+      delta,
+      point,
       origin: vector2(),
       pointerType: null,
       pinching: false,
       active: false,
       detail: isPointerEvent(e) ? e.detail : null,
-      shiftKey: false,
-      metaKey: false,
-      ctrlKey: false,
-      hasDelta: false
+      shiftKey,
+      metaKey,
+      ctrlKey,
+      hasDelta
     })
   }
   state.use(createListener(target, 'wheel', prevent, { passive: false }))
