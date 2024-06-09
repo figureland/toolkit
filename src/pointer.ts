@@ -13,11 +13,12 @@ export type { ListenerTarget, PointerInteractionEvent } from '@figureland/toolki
 export type PointerType = 'mouse' | 'pen' | 'touch'
 
 export type PointerState = {
-  button: number | null
   touchDistance: number
   shiftKey: boolean
   ctrlKey: boolean
   metaKey: boolean
+  button: number | null
+  detail: number | null
   origin: Vector2
   delta: Vector2
   point: Vector2
@@ -32,6 +33,7 @@ export const defaultPointerState = (): PointerState => ({
   shiftKey: false,
   metaKey: false,
   ctrlKey: false,
+  detail: null,
   button: 0,
   point: vector2(),
   delta: vector2(),
@@ -63,7 +65,7 @@ export const createPointer = ({
       return
     }
 
-    const { button, pointerType, shiftKey, metaKey, clientX, clientY } = e
+    const { button, pointerType, shiftKey, metaKey, clientX, clientY, detail } = e
     prevent(e)
 
     const point = preciseEnough(vector2(clientX, clientY))
@@ -75,6 +77,7 @@ export const createPointer = ({
       pointerType: pointerType as PointerType,
       delta: vector2(),
       point,
+      detail,
       origin: point,
       active: true
     })
@@ -110,6 +113,7 @@ export const createPointer = ({
 
   const onPointerUp = (e: PointerInteractionEvent) => {
     prevent(e)
+
     state.set({
       button: null,
       delta: vector2(),
@@ -117,6 +121,7 @@ export const createPointer = ({
       pointerType: null,
       pinching: false,
       active: false,
+      detail: isPointerEvent(e) ? e.detail : null,
       shiftKey: false,
       metaKey: false,
       ctrlKey: false,
