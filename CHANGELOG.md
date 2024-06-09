@@ -1,4 +1,24 @@
 #
+## v0.0.72
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.71...v0.0.72)
+
+### 🩹 Fixes
+
+- Typo in docs ([ca9b0f4](https://github.com/figureland/toolkit/commit/ca9b0f4))
+
+### 📖 Documentation
+
+- Added badges ([26adb08](https://github.com/figureland/toolkit/commit/26adb08))
+
+### 🏡 Chore
+
+- Bump dependency ([943d290](https://github.com/figureland/toolkit/commit/943d290))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.71
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.70...v0.0.71)
