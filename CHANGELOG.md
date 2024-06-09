@@ -1,4 +1,16 @@
 #
+## v0.0.76
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.75...v0.0.76)
+
+### 🚀 Enhancements
+
+- Update to pointer ([d252537](https://github.com/figureland/toolkit/commit/d252537))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.75
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.74...v0.0.75)
