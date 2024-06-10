@@ -1,6 +1,6 @@
 {
   "name": "@figureland/toolkit",
-  "version": "0.0.78",
+  "version": "0.0.79",
   "main": "dist/src/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
