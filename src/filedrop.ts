@@ -3,18 +3,28 @@ import {
   type SignalRecord,
   createEvents,
   record,
-  type Disposable
+  type Disposable,
+  system
 } from '@figureland/statekit'
 import { isNotNullish } from '@figureland/typekit/guards'
 import { createListener, type ListenerTarget } from '@figureland/toolkit/dom'
 
-export type FileDropContent =
-  | {
-      files: File[]
-    }
-  | {
-      text: string
-    }
+export type FileDropTextContent = {
+  type: 'text'
+  data: string
+}
+
+export type FileDropFilesContent = {
+  type: 'files'
+  data: File[]
+}
+
+export type FileDropContent = FileDropTextContent | FileDropFilesContent
+
+export const isContentType = <T extends FileDropContent['type']>(
+  content: FileDropContent,
+  type: T
+): content is Extract<FileDropContent, { type: T }> => content.type === type
 
 export type FileDropEvents = {
   drop: FileDropContent
@@ -44,8 +54,9 @@ export const createFileDrop = ({
   mimeTypes,
   maxSize = 1024 * 64
 }: FileDropOptions) => {
-  const state = record<FileDropState>(initialState)
-  const events = state.use(createEvents<FileDropEvents>())
+  const { use, dispose } = system()
+  const state = use(record<FileDropState>(initialState))
+  const events = use(createEvents<FileDropEvents>())
 
   const reset = () => state.set(initialState)
 
@@ -108,22 +119,28 @@ export const createFileDrop = ({
     const files = data.filter((file) => file.size <= maxSize)
 
     if (files.length > 0) {
-      return { files }
+      return {
+        type: 'files',
+        data: files
+      }
     }
     if (text) {
-      return { text }
+      return {
+        type: 'text',
+        data: text
+      }
     }
     return
   }
 
-  state.use(events)
-  state.use(createListener(target, 'dragenter', onDragEnter))
-  state.use(createListener(target, 'dragleave', onDragLeave))
-  state.use(createListener(target, 'dragover', onDragOver))
-  state.use(createListener(target, 'drop', onDrop))
+  use(events)
+  use(createListener(target, 'dragenter', onDragEnter))
+  use(createListener(target, 'dragleave', onDragLeave))
+  use(createListener(target, 'dragover', onDragOver))
+  use(createListener(target, 'drop', onDrop))
 
   return {
-    dispose: state.dispose,
+    dispose,
     state,
     events
   }
