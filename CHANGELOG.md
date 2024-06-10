@@ -1,4 +1,16 @@
 #
+## v0.0.77
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.76...v0.0.77)
+
+### 🚀 Enhancements
+
+- Updated filedrop to include text drop ([fad9317](https://github.com/figureland/toolkit/commit/fad9317))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.76
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.75...v0.0.76)
