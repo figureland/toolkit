@@ -8,11 +8,19 @@ import {
 import { isNotNullish } from '@figureland/typekit/guards'
 import { createListener, type ListenerTarget } from '@figureland/toolkit/dom'
 
+export type FileDropContent =
+  | {
+      files: File[]
+    }
+  | {
+      text: string
+    }
+
 export type FileDropEvents = {
-  drop: File[]
-  enter: File[]
-  over: File[]
-  leave: true
+  drop: FileDropContent
+  enter: boolean
+  over: boolean
+  leave: boolean
 }
 
 const initialState = {
@@ -43,16 +51,22 @@ export const createFileDrop = ({
 
   const onDragEnter = (event: DragEvent) =>
     filterEvent(event, (count) => {
+      events.emit('enter', true)
       state.set({
         active: true,
         count
       })
     })
 
-  const onDragLeave = (event: DragEvent) => filterEvent(event, reset)
+  const onDragLeave = (event: DragEvent) => {
+    filterEvent(event, reset)
+    events.emit('leave', true)
+  }
 
   const onDragOver = (event: DragEvent) =>
     filterEvent(event, (count) => {
+      events.emit('over', true)
+
       state.set({
         active: true,
         count
@@ -62,41 +76,44 @@ export const createFileDrop = ({
   const onDrop = (event: DragEvent) =>
     filterEvent(event, () => {
       reset()
-      const files = getFiles(event)
-      if (files) {
-        events.emit('drop', files)
+      const result = getDropData(event)
+      if (result) {
+        events.emit('drop', result)
       }
     })
 
   const filterEvent = (event: DragEvent, fn: (count: number) => void) => {
     event.preventDefault()
 
+    const text = event.dataTransfer?.getData('text/plain')
     const items = Array.from(event?.dataTransfer?.items || [])
     const types = items.map((i) => (i.kind === 'file' ? i.type : null)).filter(isNotNullish)
 
     if (
-      !event.dataTransfer ||
-      !mimeTypes.some((item) => types.includes(item)) ||
-      items.length === 0
+      !!event.dataTransfer &&
+      mimeTypes.some((item) => types.includes(item)) &&
+      items.length > 0
     ) {
-      fn(0)
-    } else {
       fn(items.length)
+    } else if (text) {
+      fn(1)
+    } else {
+      fn(0)
     }
   }
 
-  const getFiles = (event: DragEvent) => {
-    const files = Array.from(event.dataTransfer?.files || [])
+  const getDropData = (event: DragEvent): FileDropContent | void => {
+    const text = event.dataTransfer?.getData('text/plain')
+    const data = Array.from(event.dataTransfer?.files || [])
+    const files = data.filter((file) => file.size <= maxSize)
 
-    if (files.length === 0) {
-      return
+    if (files.length > 0) {
+      return { files }
     }
-
-    if (files.some((file) => file.size > maxSize)) {
-      return
+    if (text) {
+      return { text }
     }
-
-    return files
+    return
   }
 
   state.use(events)
