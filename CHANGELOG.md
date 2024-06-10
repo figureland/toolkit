@@ -1,4 +1,16 @@
 #
+## v0.0.78
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.77...v0.0.78)
+
+### 🚀 Enhancements
+
+- Added nicer type support for drop events ([d6f50a3](https://github.com/figureland/toolkit/commit/d6f50a3))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.77
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.76...v0.0.77)
