@@ -64,6 +64,11 @@
       "types": "./dist/preferences.d.ts",
       "require": "./dist/src/preferences.js",
       "import": "./dist/src/preferences.js"
+    },
+    "./timer": {
+      "types": "./dist/timer.d.ts",
+      "require": "./dist/src/timer.js",
+      "import": "./dist/src/timer.js"
     }
   },
   "description": "A collection of utilities for building experimental, creative tools",
