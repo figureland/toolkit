@@ -97,13 +97,13 @@ export const createClipboard = (): Clipboard => {
   const { use, dispose } = system()
   const available = use(signal(supportsClipboard))
 
-  const events = events<ClipboardEvents>()
+  const e = events<ClipboardEvents>()
 
   const emit = async (type: keyof ClipboardEvents, event: ClipboardEvent) => {
     const data = await getClipboardData()
 
     if (data.items.length > 0) {
-      events.emit(type, { ...data, event })
+      e.emit(type, { ...data, event })
     }
   }
 
@@ -129,7 +129,7 @@ export const createClipboard = (): Clipboard => {
   use(createListener(window, 'paste', handlePaste))
 
   return {
-    events,
+    events: e,
     copy,
     read,
     available,

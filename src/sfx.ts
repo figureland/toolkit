@@ -18,7 +18,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
   const audioContext = new AudioContext()
   const buffers = new NiceMap<K, Promise<AudioBuffer>>()
   const activeSources = new Set<AudioBufferSourceNode>()
-  const events = events<{ play: { sound: K } }>()
+  const e = events<{ play: { sound: K } }>()
 
   const loadSound = async (path: string): Promise<AudioBuffer> => {
     const response = await fetch(path)
@@ -43,7 +43,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
       source.onended = () => activeSources.delete(source)
       source.start(0)
       activeSources.add(source)
-      events.emit('play', { sound })
+      e.emit('play', { sound })
     } catch (error) {
       console.error(error)
     }
@@ -60,7 +60,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
   use(audioContext.close)
 
   return {
-    events,
+    events: e,
     play,
     stop,
     dispose

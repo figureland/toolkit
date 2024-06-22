@@ -34,7 +34,7 @@ export const timer = (): Timer => {
       event: undefined
     })
   )
-  const events = use(events<TimerEvents>())
+  const e = use(events<TimerEvents>())
 
   const stop = (): TimerEvent | undefined => {
     if (active) {
@@ -55,7 +55,7 @@ export const timer = (): Timer => {
 
   const tick = () => {
     if (active) {
-      events.emit('tick', performance.now() - startTime)
+      e.emit('tick', performance.now() - startTime)
     }
   }
 
@@ -70,7 +70,7 @@ export const timer = (): Timer => {
   return {
     state,
     get: () => state.get().event,
-    on: events.on,
+    on: e.on,
     start,
     stop,
     tick,

@@ -56,13 +56,13 @@ export const createFileDrop = ({
 }: FileDropOptions) => {
   const { use, dispose } = system()
   const state = use(record<FileDropState>(initialState))
-  const events = use(events<FileDropEvents>())
+  const e = use(events<FileDropEvents>())
 
   const reset = () => state.set(initialState)
 
   const onDragEnter = (event: DragEvent) =>
     filterEvent(event, (count) => {
-      events.emit('enter', true)
+      e.emit('enter', true)
       state.set({
         active: true,
         count
@@ -71,12 +71,12 @@ export const createFileDrop = ({
 
   const onDragLeave = (event: DragEvent) => {
     filterEvent(event, reset)
-    events.emit('leave', true)
+    e.emit('leave', true)
   }
 
   const onDragOver = (event: DragEvent) =>
     filterEvent(event, (count) => {
-      events.emit('over', true)
+      e.emit('over', true)
 
       state.set({
         active: true,
@@ -89,7 +89,7 @@ export const createFileDrop = ({
       reset()
       const result = getDropData(event)
       if (result) {
-        events.emit('drop', result)
+        e.emit('drop', result)
       }
     })
 
@@ -133,7 +133,7 @@ export const createFileDrop = ({
     return
   }
 
-  use(events)
+  use(e)
   use(createListener(target, 'dragenter', onDragEnter))
   use(createListener(target, 'dragleave', onDragLeave))
   use(createListener(target, 'dragover', onDragOver))
@@ -142,7 +142,7 @@ export const createFileDrop = ({
   return {
     dispose,
     state,
-    events
+    events: e
   }
 }
 

@@ -31,11 +31,11 @@ type KeyCommandsOptions = {
   target?: ListenerTarget
 }
 export const createKeyCommands = ({ target = window }: KeyCommandsOptions = {}) => {
-  const events = events<typeof Commands>()
+  const e = events<typeof Commands>()
 
-  const key = (key: keyof typeof Commands) => (e: KeyboardEvent) => {
-    preventEvents(e)
-    events.emit(key, Commands[key])
+  const key = (key: keyof typeof Commands) => (event: KeyboardEvent) => {
+    preventEvents(event)
+    e.emit(key, Commands[key])
   }
 
   const unsubscribe = tinykeys(target as Window | HTMLElement, {
@@ -64,9 +64,9 @@ export const createKeyCommands = ({ target = window }: KeyCommandsOptions = {}) 
   })
 
   return {
-    ...events,
+    ...e,
     dispose: () => {
-      events.dispose()
+      e.dispose()
       if (unsubscribe) {
         unsubscribe()
       }
