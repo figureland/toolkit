@@ -1,4 +1,20 @@
 #
+## v0.0.81
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.80...v0.0.81)
+
+### 🩹 Fixes
+
+- Broken name conflict ([3d958d1](https://github.com/figureland/toolkit/commit/3d958d1))
+
+### 🏡 Chore
+
+- Update lockfile ([3a490f8](https://github.com/figureland/toolkit/commit/3a490f8))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.80
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.79...v0.0.80)
