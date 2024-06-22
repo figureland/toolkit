@@ -1,4 +1,16 @@
 #
+## v0.0.84
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.83...v0.0.84)
+
+### 🏡 Chore
+
+- Fixing exports ([e21bcd8](https://github.com/figureland/toolkit/commit/e21bcd8))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.83
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.82...v0.0.83)
