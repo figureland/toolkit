@@ -27,3 +27,7 @@ export const isPointerEvent: (event: Event) => event is PointerEvent
 export const allowEvent: (e: Event) => boolean
 
 export const preventEvents: (e: PointerInteractionEvent) => boolean
+
+export const isHTMLElement: (target?: unknown) => target is HTMLElement
+
+export const getDataAttribute: (element: HTMLElement, propertyName: string) => string | null

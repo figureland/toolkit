@@ -69,7 +69,7 @@ export const parseClipboardItem = (item: ClipboardItem) =>
 
 export type ParsedClipboardItem = Awaited<ReturnType<typeof parseClipboardItem>>
 
-export const supportsClipboard = (): boolean => 'navigator' && 'clipboard' in navigator
+export const supportsClipboard = (): boolean => 'navigator' in navigator && 'clipboard' in navigator
 
 export type ParsedClipboardEvent = ParsedClipboardData & { event: ClipboardEvent }
 
