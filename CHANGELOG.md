@@ -1,4 +1,21 @@
 #
+## v0.0.80
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.79...v0.0.80)
+
+### 🚀 Enhancements
+
+- Added timer ([1630159](https://github.com/figureland/toolkit/commit/1630159))
+
+### 🏡 Chore
+
+- Bump dependency ([a526c78](https://github.com/figureland/toolkit/commit/a526c78))
+- Renamed events ([27c262f](https://github.com/figureland/toolkit/commit/27c262f))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.79
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.78...v0.0.79)
