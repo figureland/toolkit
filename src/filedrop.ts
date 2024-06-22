@@ -1,7 +1,7 @@
 import {
   type Events,
   type SignalRecord,
-  createEvents,
+  events,
   record,
   type Disposable,
   system
@@ -56,7 +56,7 @@ export const createFileDrop = ({
 }: FileDropOptions) => {
   const { use, dispose } = system()
   const state = use(record<FileDropState>(initialState))
-  const events = use(createEvents<FileDropEvents>())
+  const events = use(events<FileDropEvents>())
 
   const reset = () => state.set(initialState)
 

@@ -1,5 +1,5 @@
 import {
-  createEvents,
+  events,
   record,
   system,
   type Events,
@@ -34,7 +34,7 @@ export const timer = (): Timer => {
       event: undefined
     })
   )
-  const events = use(createEvents<TimerEvents>())
+  const events = use(events<TimerEvents>())
 
   const stop = (): TimerEvent | undefined => {
     if (active) {

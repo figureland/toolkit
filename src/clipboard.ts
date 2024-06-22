@@ -4,7 +4,7 @@ import {
   type Events,
   system,
   signal,
-  createEvents
+  events
 } from '@figureland/statekit'
 import { createListener } from '@figureland/toolkit/dom'
 import { isString } from '@figureland/typekit/guards'
@@ -97,7 +97,7 @@ export const createClipboard = (): Clipboard => {
   const { use, dispose } = system()
   const available = use(signal(supportsClipboard))
 
-  const events = createEvents<ClipboardEvents>()
+  const events = events<ClipboardEvents>()
 
   const emit = async (type: keyof ClipboardEvents, event: ClipboardEvent) => {
     const data = await getClipboardData()

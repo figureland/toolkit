@@ -1,4 +1,4 @@
-import { system, signal, createEvents, type Disposable, type Events } from '@figureland/statekit'
+import { system, signal, events, type Disposable, type Events } from '@figureland/statekit'
 import { NiceMap } from '@figureland/typekit/map'
 import { keys } from '@figureland/typekit/object'
 
@@ -18,7 +18,7 @@ export const sfx = <S extends SoundMap, K extends keyof S>({
   const audioContext = new AudioContext()
   const buffers = new NiceMap<K, Promise<AudioBuffer>>()
   const activeSources = new Set<AudioBufferSourceNode>()
-  const events = createEvents<{ play: { sound: K } }>()
+  const events = events<{ play: { sound: K } }>()
 
   const loadSound = async (path: string): Promise<AudioBuffer> => {
     const response = await fetch(path)
