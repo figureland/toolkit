@@ -1,4 +1,16 @@
 #
+## v0.0.82
+
+[compare changes](https://github.com/figureland/toolkit/compare/v0.0.81...v0.0.82)
+
+### 🚀 Enhancements
+
+- Added some utilities to dom ([89e2b45](https://github.com/figureland/toolkit/commit/89e2b45))
+
+### ❤️ Contributors
+
+- Toby Milner-Gulland <toby@figure.land>
+
 ## v0.0.81
 
 [compare changes](https://github.com/figureland/toolkit/compare/v0.0.80...v0.0.81)
